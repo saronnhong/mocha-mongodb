@@ -58,7 +58,7 @@ describe("Updating records", function () {
         })
     });
 
-    it("Finds one record and update on database", function (done) {
+    it("Update record on database", function (done) {
         MarioChar.findOneAndUpdate({ name: "Mario" }, { name: "Peach" }, {useFindAndModify: false}).then(function (result) {
             MarioChar.findOne({ name: "Peach" }).then(function (result) {
                 assert(result.name === "Peach");
@@ -81,7 +81,7 @@ describe("Delete records", function () {
         })
     });
 
-    it("Finds one record and delete on database", function (done) {
+    it("Delete record on database", function (done) {
         MarioChar.deleteOne({ name: "Mario" }).then(function (result) {
             assert(result.deletedCount === 1);
             done();
