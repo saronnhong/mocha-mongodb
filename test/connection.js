@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 //connect to mongoDB
-mongoose.connect('mongodb://localhost/mocha_test');
+mongoose.connect("mongodb://localhost/mocha_test", {useUnifiedTopology: true, useNewUrlParser: true});
 
 //Connect to the db before tests run
 before(function(done){
