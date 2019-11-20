@@ -16,6 +16,24 @@ describe("Saving records", function () {
             done();
         });
     });
+
+    it("Saves 2 record to the database", function (done) {
+        var char = new MarioChar({
+            name: "Mario"
+        });
+        var char2 = new MarioChar({
+            name: "Luigi"
+        });
+
+        char.save().then(function () {
+            assert(char.isNew === false);
+        });
+
+        char2.save().then(function () {
+            assert(char2.isNew === false);
+            done();
+        });
+    });
 });
 
 describe("Finding records", function () {
